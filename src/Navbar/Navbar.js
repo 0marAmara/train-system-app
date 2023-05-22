@@ -1,17 +1,16 @@
 import {Link} from "react-router-dom";
+import React from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <nav>
-            <ul>
-                <li>
+                {(props.userId==='')&&(<ul><li>
                     <Link to="/login">Login</Link>
                 </li>
-                <li>
-                    <Link to="/register">Register</Link>
-                </li>
-
-            </ul>
+                    <li>
+                        <Link to="/register">Register</Link>
+                    </li>
+                </ul>)}
         </nav>
     );
 };

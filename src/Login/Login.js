@@ -28,10 +28,10 @@ const Login = ({ setUserId }) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
-                    console.log(data)
                     // Set the user ID and redirect to the appropriate homepage based on the user's role
                     setUserId(data.userId);
-                    if (data.role === 'admin') {
+                    console.log(data)
+                    if (data.role === 'Administrator') {
                         history('/admin-home');
                     } else {
                         history('/user-home');
